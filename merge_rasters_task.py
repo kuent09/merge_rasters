@@ -70,12 +70,7 @@ def main():
                 "type": "raster",
                 "format": "tif",
                 "name": out_filename_ok,
-                "bands":[
-                    {'name':'green'},
-                    {'name':'red'},
-                    {'name':'red_edge'},
-                    {'name':'nir'}],
-                "categories":['reflectances'],
+                "categories": component['categories'],
                 "components": [
                     {
                         "name": "raster",
