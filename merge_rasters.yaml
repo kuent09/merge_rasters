@@ -1,0 +1,34 @@
+---
+spec-version: v1.0
+name: proserv/merge_rasters
+version: 1.0.0
+display-name: Merge rasters
+description: Merge rasters into single one
+docker-image: registry-external.admin-tool.delair-stack.com/kuent/merge_rasters
+instance-type: xlarge
+volume-size: 500
+groups: [Free analytics]
+inputs:
+  - name: rasters_in
+    display-name: Rasters
+    description: Select rasters to merge
+    kind: dataset-array
+    schema:
+      type: raster
+      mission: all
+    required: true
+parameters:
+  - name: outraster_name
+    display-name: Output raster name
+    description: File name for merged rasters (by default is Merged_rasters)
+    schema:
+      type: string
+    required: false
+deliverables:
+  - name: merged_rasters
+    display-name: Merged_rasters
+    description: Merged rasters
+    kind: dataset
+    schema:
+      type: raster
+    required: true
