@@ -27,6 +27,7 @@ def merge_rasters(raster_files:str, outfile_path:str) -> None:
             "height": mosaic.shape[1],
             "width": mosaic.shape[2],
             "transform": output,
+            "compress": "lzw",
         }
     )
 

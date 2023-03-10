@@ -11,7 +11,7 @@ groups: [Free analytics]
 inputs:
   - name: rasters_in
     display-name: Rasters
-    description: Select rasters to merge
+    description: Select rasters to merge (rasters must have the same category)
     kind: dataset-array
     schema:
       type: raster
