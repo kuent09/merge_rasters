@@ -6,7 +6,7 @@ display-name: Merge rasters
 description: Merge rasters into single one
 docker-image: registry-external.admin-tool.delair-stack.com/kuent/merge_rasters
 instance-type: xlarge
-volume-size: 500
+volume-size: 1000
 groups: [Free analytics]
 inputs:
   - name: rasters_in

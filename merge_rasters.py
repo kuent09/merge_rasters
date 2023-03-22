@@ -22,13 +22,12 @@ def merge_rasters(raster_files:str, outfile_path:str) -> None:
 
     output_meta = raster.meta.copy()
     output_meta.update(
-        {
-            "driver": "GTiff",
-            "height": mosaic.shape[1],
-            "width": mosaic.shape[2],
-            "transform": output,
-            "compress": "lzw",
-        }
+        driver="GTiff",
+        height=mosaic.shape[1],
+        width=mosaic.shape[2],
+        transform=output,
+        bigtiff="YES",
+        compress="lzw",
     )
 
     with rio.open(outfile_path, "w", **output_meta) as m:
